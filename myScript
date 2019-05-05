@@ -1,0 +1,18 @@
+push
+rotate
+x 70
+rotate
+y 20
+move
+250 170 0
+sphere
+0 0 0 50
+push
+rotate
+y 200
+torus
+0 0 0 70 150
+pop
+display
+save
+image.png

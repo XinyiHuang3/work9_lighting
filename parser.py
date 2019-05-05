@@ -8,19 +8,13 @@ The file follows the following format:
      Every command is a single character that takes up a line
      Any command that requires arguments must have those arguments in the second line.
      The commands are as follows:
-
-
          push: push a copy of the current top of the coordinate system stack to the stack
-
          pop: pop off the current top of the coordinate system stack
-
          All the shape commands work as follows:
              1) Add the shape to a temporary matrix
              2) Multiply that matrix by the current top of the coordinate system stack
              3) Draw the shape to the screen
              4) Clear the temporary matrix
-
-
          sphere: add a sphere to the POLYGON matrix -
                  takes 4 arguemnts (cx, cy, cz, r)
          torus: add a torus to the POLYGON matrix - 
@@ -28,7 +22,6 @@ The file follows the following format:
          box: add a rectangular prism to the POLYGON matrix - 
               takes 6 arguemnts (x, y, z, width, height, depth)	    
          clear: clears the edge and POLYGON matrices
-
 	 circle: add a circle to the edge matrix - 
 	         takes 4 arguments (cx, cy, cz, r)
 	 hermite: add a hermite curve to the edge matrix -
@@ -56,12 +49,11 @@ The file follows the following format:
                save the screen to a file -
                takes 1 argument (file name)
          quit: end parsing
-
 See the file script for an example of the file format
 """
 ARG_COMMANDS = [ 'box', 'sphere', 'torus', 'circle', 'bezier', 'hermite', 'line', 'scale', 'move', 'rotate', 'save' ]
 
-def parse_file( fname, edges, polygons, csystems, screen, zbuffer, color,view, ambient, light, areflect, dreflect, sreflect):
+def parse_file( fname, edges, polygons, csystems, screen, zbuffer, color, view, ambient, light, areflect, dreflect, sreflect):
 
     f = open(fname)
     lines = f.readlines()
@@ -69,7 +61,7 @@ def parse_file( fname, edges, polygons, csystems, screen, zbuffer, color,view, a
     clear_screen(screen)
     clear_zbuffer(zbuffer)
     step = 100
-    step_3d = 20
+    step_3d = 100
 
     c = 0
     while c < len(lines):
